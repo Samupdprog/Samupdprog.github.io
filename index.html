@@ -1,61 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="JavaScript" href="js/script.js">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>Samuel - Web Developer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Formulario Validado</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card intro">
-            <img src="profile-pic.jpg" alt="Samuel Piñero Díz" class="profile-pic">
-            <h1>Samuel Piñero Díaz</h1>
-            <p>Web developer</p>
-            <h2>Hey, welcome to my site!</h2>
-            <p>I'm a web developer, and aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
-            <p>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.</p>
-        </div>
-        
-        <div class="card find-me">
-            <h2>Find me on</h2>
-            <div class="social-icons">
-                <a href="#" class="icon">📧</a>
-                <a href="#" class="icon">🐙</a>
-                <a href="#" class="icon">Be</a>
-                <a href="#" class="icon">🔗</a>
-                <a href="#" class="icon">🏀</a>
-                <a href="#" class="icon">𝕏</a>
-                <a href="#" class="icon">in</a>
-                <a href="#" class="icon">f</a>
+    <form action="https://www.w3schools.com/action_page.php" method="POST" id="formulario">
+        <fieldset>
+            <legend>Datos Usuario</legend>
+            <div class="parte">
+                <div>
+                    <label for="usuario">Nombre de Usuario</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="UserName" 
+                           required minlength="5" maxlength="20" pattern="[A-Za-z0-9]+">
+                </div>
+                <div>
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Introduce Contraseña" required minlength="8">
+                    <label>
+                        <input type="checkbox" id="mostrar-contraseña">
+                        Mostrar Contraseña
+                    </label>
+                </div>
             </div>
-        </div>
-        
-        <div class="card resume">
-            <h2>Holaaaaaaaaaaaaaaa</h2>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
-            <button>Download my CV</button>
-        </div>
-        
-        <div class="card monomod">
-            <h2>Proyectos</h2>
-            <p>aaa.</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
-        </div>
-        
-        <div class="card lexington">
-            <h2>bbbbbbbbbbbbbbbbbbbbb</h2>
-            <p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
-            <img src="" alt="asdfasfdsafdfsd" class="preview-img">
-        </div>
-        <div>
-            <form action="">
-        <input type="tel" name="" id="">
-        <input type="submit" name="" id="">
+        </fieldset>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div class="parte">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required maxlength="30">
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required maxlength="50">
+                </div>
+            </div>
+            <div class="parte">
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ejem: (+34)922123123" required pattern="^\(\+34\)\d{9}$" minlength="14" maxlength="14">
+                </div>
+                <div>
+                    <label for="codigo-postal">Código Postal</label>
+                    <input type="text" id="codigo-postal" name="codigo-postal" placeholder="38390" required minlength="5" maxlength="5">
+                </div>
+            </div>
+            <div class="parte">
+                <div>
+                    <label for="dni">DNI/NIE</label>
+                    <select id="dni" name="dni" required>
+                        <option value="" disabled selected>--</option>
+                        <option value="dni">DNI</option>
+                        <option value="nie">NIE</option>
+                    </select>
+                    <label for="dni-nie">DNI/NIE</label>
+                    <input type="text" id="dni-nie" name="dni-nie" placeholder="Introduce tu DNI o NIE" required pattern="^(\d{8}[A-Za-z]|[XxYyZz]\d{7}[A-Za-z])$" maxlength="9" title="Formato incorrecto"> 
+                    <!--en el pattern uno es dni y el otro nie-->
+                </div>
+                <div>
+                    <br>
+                    <label>Crear cuenta como:</label>
+                    <br>
+                    <label><input type="radio" name="tipo-cuenta" value="particular" required> Particular</label>
+                    <label><input type="radio" name="tipo-cuenta" value="empresa">Empresa</label>
+                </div>
+                <br>
+                <div>
+                    <label for="nacimiento">Año de Nacimiento</label>
+                    <select id="nacimiento" name="nacimiento" required>
+                        <option value="">--</option>
+                        <option value="2010">2010</option>
+                        <option value="2005">2005</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label>Elige tus aficiones:</label>
+                <div class="checkbox-grupo">
+                    <label><input type="checkbox" name="aficiones" value="musica"> Música</label>
+                    <label><input type="checkbox" name="aficiones" value="deporte"> Deporte</label>
+                    <label><input type="checkbox" name="aficiones" value="videojuegos"> Video Juegos</label>
+                    <label><input type="checkbox" name="aficiones" value="manualidades"> Manualidades</label>
+                    <label><input type="checkbox" name="aficiones" value="arte"> Arte</label>
+                    <label><input type="checkbox" name="aficiones" value="lectura"> Lectura</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Publicación</legend>
+            <div class="parte">
+                <div>
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Título" maxlength="15" required>
+                    <span id="contador-titulo">0 / 15</span>
+                </div>
+            </div>
+            <br>
+            <div class="parte">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" placeholder="Escribe una descripción" 
+                          maxlength="120" rows="4" required></textarea>
+                <span id="contador-descripcion">0 / 120</span>
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
     </form>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
