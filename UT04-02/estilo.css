@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+    display: flex;
+    gap: 2em;
+}
+
+form {
+    width: 50%;
+}
+
+input {
+    border-radius: 0.2em;
+    border: 2px solid; 
+    height: 1.5em;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+hr {
+    margin-bottom: 1em;
+    margin-top: 0.1em;
+}
+
+.parte {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+    margin-bottom: 1em;
+}
+
+.input {
+    width: 100%;
+    
+
+}
+
+.input-dni{
+    display: flex;
+    gap: 0.5em;
+}
+
+.checkbox-grupo {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1em;
+}
+
+
+
+
+
+
+.nombre, 
+.contra, 
+.apellido, 
+.telefono, 
+.codigo, 
+.doc, 
+.cuenta, 
+.naci, 
+.aficiones, 
+.publi, 
+.desc 
+{
+    flex: 1;
+
+}
+
+.lista {
+    border: 2px solid black;
+    padding: 2em;
+}
+
+
+
+
+.error {
+    color: red;
+    font-size: 0.875em; 
+    margin-top: 5px; 
+    display: block;
+}
+
+
+input:invalid, select:invalid, textarea:invalid {
+    border-color: red; 
+}
+
+
+input:valid, select:valid, textarea:valid {
+    border-color: rgb(0, 0, 0);  
+}
