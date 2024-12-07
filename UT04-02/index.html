@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Validado</title>
+    <link rel="stylesheet" href="./estilo.css">
+    
+</head>
+<body>
+    
+    <form class="formulario" action="https://www.w3schools.com/action_page.php" method="POST" id="formulario" novalidate>
+        <p>Datos Usuario</p>
+        <hr>
+            <div class="parte">
+                <div class="nombre">
+                    <label for="NombreUsuario">Nombre de Usuario</label>
+                    <div class="input">
+                        <input class="input" type="text" id="usuario" name="NombreUsuario" placeholder="Ejem: Samuel" 
+                         minlength="4" maxlength="20" pattern="[A-Za-z]{4,20}" title="Tiene que tener entre 4 y 20 caracteres." required>
+                        <span class="error" id="error-NombreUsuario"></span>
+                    </div>
+                </div>
+                <div class="contra">
+                    <label for="Contrasena">Contraseña</label>
+                    <div class="input">
+                        <div>
+                            <input class="input" type="password" id="contraseña" name="Contrasena" placeholder="Introduce Contraseña" title="Debe contener 8 dígitos." minlength="8" maxlength="8" pattern="\d{8,}" required>
+                            <span class="error" id="error-Contrasena"></span>
+                        </div>
+                        
+                        <span class="error" id="error-Contrasena"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="parte">
+                <div class="nombre">
+                </div>
+                <div class="contra">
+                    <div class="input">
+                            <label>
+                                <input class="input-contra" type="checkbox" id="mostrar-contraseña">
+                                Mostrar Contraseña
+                            </label>
+                        </div>
+
+                        <span class="error" id="error-Contrasena"></span>
+                    </div>
+                </div>
+            </div>
+        
+        <p>Datos Personales</p>
+        <hr>
+            <div class="parte">
+                <div class="nombre">
+                    <label for="Nombre">Nombre</label>
+                    <div class="input">
+                        <input class="input" type="text" id="nombre" name="Nombre" placeholder="Nombre" title="Tiene que tener entre 4 y 20 caracteres." pattern="[A-Za-z]{4,20}" minlength="4" maxlength="20" required>
+                        <span class="error" id="error-Nombre"></span>
+                    </div>
+                </div>
+                <div class="apellido">
+                    <label for="Apellidos">Apellidos</label>
+                    <div class="input">
+                        <input class="input" type="text" id="apellidos" name="Apellidos" placeholder="Apellidos" title="Tiene que tener entre 4 y 20 caracteres." pattern="[A-Za-z]{4,20}" minlength="4" maxlength="20" required>
+                        <span class="error" id="error-Apellidos"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="parte">
+                <div class="telefono">
+                    <label for="Telefono">Teléfono</label>
+                    <div class="input">
+                        <input class="input" type="tel" id="telefono" name="Telefono" placeholder="Ejem: (+34)922123123"  pattern="^\(\+34\)\d{9}$" title="Tiene que tener (+34) al principio y 9 digitos." minlength="14" maxlength="14" required>
+                        <span class="error" id="error-Telefono"></span>
+                    </div>
+                </div>
+                <div class="codigo">
+                    <label for="CodigoPostal">Código Postal</label>
+                    <div class="input">
+                        <input class="input" type="text" id="codigoPostal" name="CodigoPostal" placeholder="Código Postal" maxlength="5" pattern="38\d{3}" title="Tiene que empezar por 38 y tener un total de 5 numeros." required/>
+                        <span class="error" id="error-CodigoPostal"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="parte">
+                <div class="doc">
+                    <label class="tipodoc" for="TipoDocumento">DNI/NIE</label>
+                    <div class="input-dni">
+                        <select id="dni/nie" name="TipoDocumento" title="Selecciona una de las opciones." required>
+                            <option value="" disabled selected>--</option>
+                            <option value="DNI">DNI</option>
+                            <option value="NIE">NIE</option>
+                        </select>
+                        <input class="input" type="text" id="dni-nie" name="DniNie" placeholder="Introduce tu DNI o NIE." pattern="^(\d{8}[A-Za-z]|[XxYyZz]\d{7}[A-Za-z])$" maxlength="9" title="Formato incorrecto" required> 
+                    </div>
+                    <span class="error" id="error-DniNie"></span>
+                </div>
+                <div class="cuenta">
+                    <label>Crear cuenta como:</label>
+                    <div class="input">
+                        <label><input type="radio" name="CuentaComo" value="particular">Particular</label>
+                        <label><input type="radio" name="CuentaComo" value="empresa">Empresa</label>
+                        <span class="error" id="error-CuentaComo"></span>
+                    </div>
+                </div>
+                <div class="naci">
+                    <label for="AnioNacimiento">Año de Nacimiento</label>
+                    <div class="input">
+                        <input class="input" type="date" id="nacimiento" name="AnioNacimiento" title="La fecha tiene que estar entre el año 1920 y 2010" min="1920-01-01" max="2010-12-31" pattern="^(19[2-9][0-9]|200[0-9]|2010)$"  required>
+                        <span class="error" id="error-AnioNacimiento"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="parte">
+                <div class="aficiones">
+                    <label>Elige tus aficiones:</label>
+                    <div class="checkbox-grupo">
+                        <label><input type="checkbox" name="Aficiones" value="MU"> Música</label>
+                        <label><input type="checkbox" name="Aficiones" value="DE"> Deporte</label>
+                        <label><input type="checkbox" name="Aficiones" value="VI"> Video Juegos</label>
+                        <label><input type="checkbox" name="Aficiones" value="MA"> Manualidades</label>
+                        <label><input type="checkbox" name="Aficiones" value="AR"> Arte</label>
+                        <label><input type="checkbox" name="Aficiones" value="LE"> Lectura</label>
+                    </div>
+                    <input type="hidden" id="aficiones-seleccionadas" name="aficiones-seleccionadas">
+                    <span class="error" id="error-checkbox"></span>
+                </div>
+            </div>
+        
+        <p>Datos Publicitarios</p>
+        <hr>
+            <div class="parte">
+                <div class="publi">
+                    <label for="PublicacionTitulo">Título</label>
+                    <div class="input">
+                        <input class="input" type="text" id="titulo" name="PublicacionTitulo" placeholder="Título" title="Minimo 4 caracteres y maximo 120" minlength="4" maxlength="15" required>
+                        <span id="contador-titulo">0 / 15</span>
+                        <span class="error" id="error-PublicacionTitulo"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="parte">
+                <div class="desc">
+                    <label for="PublicacionDescripcion">Descripción</label>
+                    <div class="input">
+                        <textarea class="input" rows="5" id="descripcion" name="PublicacionDescripcion" title="Minimo 4 caracteres y maximo 120" placeholder="Escribe una descripción" 
+                          minlength="4" maxlength="120" required></textarea>
+                        <span id="contador-descripcion">0 / 120</span>
+                        <span class="error" id="error-PublicacionDescripcion"></span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="validacion-mensajes" class="lista">
+        <h3>Errores de Validación:</h3>
+        <ul id="messajes-lista"></ul>
+    </div>
+    
+    <script  src="./script.js"></script>
+    
+</body>
+</html>
